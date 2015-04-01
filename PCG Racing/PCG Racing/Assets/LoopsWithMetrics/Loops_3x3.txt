@@ -1,0 +1,5 @@
+rrlrrsrs,6,2
+rrsrsrrl,6,2
+rsrsrsrs,4,4
+rsrsrrlr,6,2
+rsrrlrrs,6,2

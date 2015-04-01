@@ -1,0 +1,15 @@
+rrslrrsrss,6,4
+rsrrllrrsrss,8,4
+rrlrsrsrss,6,4
+rrlrsrrlrs,8,2
+rsrssrsrrllr,8,4
+rrssrsrrls,6,4
+rrssrsrsrl,6,4
+rsrssrsrss,4,6
+rrssrrlrrl,8,2
+rsrssrrlrs,6,4
+rsrssrrslr,6,4
+rrlrrlrrss,8,2
+rrsrlrrsrl,8,2
+rsrsrlrrss,6,4
+rsrrlsrrss,6,4
