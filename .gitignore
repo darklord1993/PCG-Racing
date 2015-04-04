@@ -1,43 +1,38 @@
-# Windows image file caches
-Thumbs.db
-ehthumbs.db
+# =============== #
+# Unity generated #
+# =============== #
+Temp/
+Library/
 
-# Folder config file
-Desktop.ini
-
-# Recycle Bin used on file shares
-$RECYCLE.BIN/
-
-# Windows Installer files
-*.cab
-*.msi
-*.msm
-*.msp
-
-# Windows shortcuts
-*.lnk
-
-# =========================
-# Operating System Files
-# =========================
-
-# OSX
-# =========================
-
+# ===================================== #
+# Visual Studio / MonoDevelop generated #
+# ===================================== #
+ExportedObj/
+obj/
+*.svd
+*.userprefs
+/*.csproj
+*.pidb
+*.suo
+/*.sln
+*.user
+*.unityproj
+*.booproj
+*/BetterEditorPrefs.asset
+# ============ #
+# OS generated #
+# ============ #
 .DS_Store
-.AppleDouble
-.LSOverride
-
-# Thumbnails
+.DS_Store?
 ._*
-
-# Files that might appear on external disk
 .Spotlight-V100
 .Trashes
+ehthumbs.db
+Thumbs.db
+Assets/UnityVS/Editor/UnityVS.VersionSpecific.dll
+Assets/Plugins/Editor/Vexe/ScriptableAssets/BetterEditorPrefs.asset
+Assets/UnityVS/Editor/UnityVS.VersionSpecific.dll
+*/UnityVS/*
+*/UnityVS
 
-# Directories potentially created on remote AFP share
-.AppleDB
-.AppleDesktop
-Network Trash Folder
-Temporary Items
-.apdisk
+Assets/Content/Manny_Assets/Animated/3rdWorld/Female/idle_female_3rd_023.png.meta
