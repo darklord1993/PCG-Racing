@@ -13,6 +13,9 @@ namespace PCGRacing
         public GameObject left;
         public GameObject straight;
         public GameObject right;
+        public GameObject markerPrefab;
+        public GameObject markersCollection;
+        public GameObject road;
 
         public string trackCode;
         private List<Tile> track;
@@ -62,8 +65,22 @@ namespace PCGRacing
                     else if (nextDir == Direction.W) { nextY -= 1; nextDir = Direction.S; }
                 }
 
-                track[i].Generate(width, height);
+                var marker = track[i].Generate(width, height, markerPrefab);
+                marker.transform.parent = markersCollection.transform;
             }
+
+            int j = 0;
+            var markerLast = track[j].Generate(width, height, markerPrefab);
+            while (trackCode[j] != 's')
+            {
+                markerLast.transform.parent = markersCollection.transform;
+                j++;
+                markerLast = track[j].Generate(width, height, markerPrefab);
+            }
+            markerLast.transform.parent = markersCollection.transform;
+
+            road.SetActive(true);
+            road.GetComponent<RoadObjectScript>().OOCCOODQQD(null, null, null);
         }
 
         // Update is called once per frame
