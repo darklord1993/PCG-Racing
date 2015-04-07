@@ -1,5 +1,6 @@
 ﻿using UnityEngine;
 using System.Collections;
+using System.Linq;
 using System.Collections.Generic;
 
 namespace PCGRacing
@@ -10,9 +11,9 @@ namespace PCGRacing
         public float height;
 
         //Prefabs
-        public GameObject left;
-        public GameObject straight;
-        public GameObject right;
+        //public GameObject left;
+        //public GameObject straight;
+        //public GameObject right;
         public GameObject markerPrefab;
         public GameObject markersCollection;
         public GameObject road;
@@ -38,7 +39,7 @@ namespace PCGRacing
                 if(trackCode[i] == 'r')
                 {
                     track[i].type = TileType.Right;
-                    track[i].prefab = right;
+                    //track[i].prefab = right;
                     if (nextDir == Direction.N) { nextX += 1; nextDir = Direction.E; }
                     else if (nextDir == Direction.S) { nextX -= 1; nextDir = Direction.W; }
                     else if (nextDir == Direction.E) { nextY -= 1; nextDir = Direction.S; }
@@ -48,7 +49,7 @@ namespace PCGRacing
                 else if(trackCode[i] == 's')
                 {
                     track[i].type = TileType.Straight;
-                    track[i].prefab = straight;
+                    //track[i].prefab = straight;
                     if (nextDir == Direction.N) nextY += 1;
                     else if (nextDir == Direction.S) nextY -= 1;
                     else if (nextDir == Direction.E) nextX += 1;
@@ -58,25 +59,38 @@ namespace PCGRacing
                 else if (trackCode[i] == 'l')
                 {
                     track[i].type = TileType.Left;
-                    track[i].prefab = left;
+                    //track[i].prefab = left;
                     if (nextDir == Direction.N) { nextX -= 1; nextDir = Direction.W; }
                     else if (nextDir == Direction.S) { nextX += 1; nextDir = Direction.E; }
                     else if (nextDir == Direction.E) { nextY += 1; nextDir = Direction.N; }
                     else if (nextDir == Direction.W) { nextY -= 1; nextDir = Direction.S; }
                 }
-
-                var marker = track[i].Generate(width, height, markerPrefab);
-                marker.transform.parent = markersCollection.transform;
             }
 
-            int j = 0;
-            var markerLast = track[j].Generate(width, height, markerPrefab);
-            while (trackCode[j] != 's')
+            int j;
+            int s = trackCode.IndexOf('s');
+            if (!trackCode.Contains('s')) s = 0;
+            j = s;
+
+            while (j < trackCode.Length)
             {
-                markerLast.transform.parent = markersCollection.transform;
+                var marker = track[j].Generate(width, height, markerPrefab);
+                marker.transform.parent = markersCollection.transform;
                 j++;
-                markerLast = track[j].Generate(width, height, markerPrefab);
             }
+
+            j = 0;
+
+            while (j < s)
+            {
+                var marker = track[j].Generate(width, height, markerPrefab);
+                marker.transform.parent = markersCollection.transform;
+                j++;
+            }
+
+            var markerLast = track[s].Generate(width, height, markerPrefab);
+            markerLast.transform.parent = markersCollection.transform;
+            markerLast = track[s + 1].Generate(width, height, markerPrefab);
             markerLast.transform.parent = markersCollection.transform;
 
             road.SetActive(true);

@@ -12,7 +12,7 @@ namespace PCGRacing
         public int y;
         public TileType type;
         public Direction dir;
-        public GameObject prefab;
+        //public GameObject prefab;
 
         public Tile(int x, int y, Direction dir)
         {
