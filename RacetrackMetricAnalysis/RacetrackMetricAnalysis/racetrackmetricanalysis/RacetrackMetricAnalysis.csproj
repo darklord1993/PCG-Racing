@@ -41,8 +41,12 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Program Execution\IProgram.cs" />
+    <Compile Include="Program Execution\ProgramHelper.cs" />
     <Compile Include="Classes\RacetrackAnalyzer.cs" />
     <Compile Include="Classes\RacetrackMetrics.cs" />
+    <Compile Include="Program Execution\Program_Full.cs" />
+    <Compile Include="Program Execution\Program_Hierarchical.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>

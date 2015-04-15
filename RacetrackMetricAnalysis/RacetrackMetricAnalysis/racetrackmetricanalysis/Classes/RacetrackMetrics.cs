@@ -12,6 +12,8 @@ namespace RacetrackMetricAnalysis.Classes
         public int NumberOfStraights { get; private set; }
         public int NumberOfSuperStraights { get; set; }
         public int NumberOfConsecutiveTurns { get; set; }
+        private int _fullLength;
+        public int FullLength { get { return _fullLength; } }
         private float _avgSuperStraightLength;
         public float AverageSuperStraightLength { get { return _avgSuperStraightLength; } }
         private float _avgConsecutiveTurns;
@@ -23,6 +25,9 @@ namespace RacetrackMetricAnalysis.Classes
             NumberOfStraights = numberOfStraights;
             NumberOfSuperStraights = numberOfSuperStraights;
             NumberOfConsecutiveTurns = numberOfConsecutiveTurns;
+
+            _fullLength = NumberOfTurns + NumberOfStraights;
+
             if (NumberOfSuperStraights == 0) _avgSuperStraightLength = 0f;
             else _avgSuperStraightLength = (float)numberOfStraights / (float)numberOfSuperStraights;
 

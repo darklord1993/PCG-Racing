@@ -1,6 +1,6 @@
-Straight Aways: 9197360
-Super Straight Aways: 5890136
-Turns: 16216336
-Consecutive Turns: 3857212
-Longest Super Straight: 12
-Longest Consecutive Turn: 10
+Straight Aways: 0
+Super Straight Aways: 0
+Turns: 0
+Consecutive Turns: 0
+Longest Super Straight: 0
+Longest Consecutive Turn: 0

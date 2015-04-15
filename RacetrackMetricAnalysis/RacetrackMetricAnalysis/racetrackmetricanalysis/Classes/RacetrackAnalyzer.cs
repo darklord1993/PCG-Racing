@@ -24,32 +24,20 @@ namespace RacetrackMetricAnalysis.Classes
                 {
                     Superstraight = false;
                     numberOfTurns++;
-                    if (i > 0)
+                    if (!ConsecutiveTurn)
                     {
-                        if (racetrack[i - 1] != 's')
-                        {
-                            if (!ConsecutiveTurn)
-                            {
-                                numberOfConsecutiveTurns++;
-                                ConsecutiveTurn = true;
-                            }
-                        }
+                        numberOfConsecutiveTurns++;
+                        ConsecutiveTurn = true;
                     }
                 }
                 else
                 {
                     ConsecutiveTurn = false;
                     numberOfStraights++;
-                    if (racetrack[i - 1] == 's')
+                    if (!Superstraight)
                     {
-                    }
-                    else
-                    {
-                        if (!Superstraight)
-                        {
-                            Superstraight = true;
-                            numberOfSuperStraights++;
-                        }
+                        Superstraight = true;
+                        numberOfSuperStraights++;
                     }
                 }
             }
