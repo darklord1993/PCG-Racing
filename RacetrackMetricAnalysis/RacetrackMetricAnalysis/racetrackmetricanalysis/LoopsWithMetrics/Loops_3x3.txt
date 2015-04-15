@@ -1,5 +1,5 @@
-rrlrrsrs,6,2,2
-rrsrsrrl,6,2,2
-rsrsrsrs,4,4,4
-rsrsrrlr,6,2,2
-rsrrlrrs,6,2,2
+rrlrrsrs,6,2,2,1,1,6
+rrsrsrrl,6,2,2,2,1,3
+rsrsrsrs,4,4,4,0,1,0
+rsrsrrlr,6,2,2,1,1,6
+rsrrlrrs,6,2,2,1,1,6

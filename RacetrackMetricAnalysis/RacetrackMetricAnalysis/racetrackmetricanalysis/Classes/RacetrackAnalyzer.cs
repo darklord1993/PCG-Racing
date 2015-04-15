@@ -15,28 +15,41 @@ namespace RacetrackMetricAnalysis.Classes
         {
             int numberOfTurns = 0, numberOfStraights = 0, numberOfSuperStraights = 0, numberOfConsecutiveTurns = 0;
 
+            bool Superstraight = false;
+            bool ConsecutiveTurn = false;
+
             for (int i = 0; i < racetrack.Length; i++)
             {
                 if (racetrack[i] != 's')
                 {
+                    Superstraight = false;
                     numberOfTurns++;
                     if (i > 0)
                     {
                         if (racetrack[i - 1] != 's')
                         {
-                            numberOfConsecutiveTurns++;
+                            if (!ConsecutiveTurn)
+                            {
+                                numberOfConsecutiveTurns++;
+                                ConsecutiveTurn = true;
+                            }
                         }
                     }
                 }
                 else
                 {
+                    ConsecutiveTurn = false;
                     numberOfStraights++;
                     if (racetrack[i - 1] == 's')
                     {
                     }
                     else
                     {
-                        numberOfSuperStraights++;
+                        if (!Superstraight)
+                        {
+                            Superstraight = true;
+                            numberOfSuperStraights++;
+                        }
                     }
                 }
             }

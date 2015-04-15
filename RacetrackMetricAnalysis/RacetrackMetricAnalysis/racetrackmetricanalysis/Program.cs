@@ -20,11 +20,11 @@ namespace RacetrackMetricAnalysis
                 {
                     Console.WriteLine("Starting " + i + "x" + j + "...");
 
-                    string[] loops = System.IO.File.ReadAllLines(@"C:\Users\Jake\Documents\RacetrackMetricAnalysis\RacetrackMetricAnalysis\racetrackmetricanalysis\Loops\Loops_" + i + "x" + j + ".txt");
+                    string[] loops = System.IO.File.ReadAllLines(@"C:\Users\Chase Plante\Documents\GitHub\PCG-Racing\RacetrackMetricAnalysis\RacetrackMetricAnalysis\racetrackmetricanalysis\Loops\Loops_" + i + "x" + j + ".txt");
 
                     ProcessMetrics(loops, analyzer);
 
-                    System.IO.File.WriteAllLines(@"C:\Users\Jake\Documents\RacetrackMetricAnalysis\RacetrackMetricAnalysis\racetrackmetricanalysis\LoopsWithMetrics\Loops_" + i + "x" + j + ".txt", loops);
+                    System.IO.File.WriteAllLines(@"C:\Users\Chase Plante\Documents\GitHub\PCG-Racing\RacetrackMetricAnalysis\RacetrackMetricAnalysis\racetrackmetricanalysis\LoopsWithMetrics\Loops_" + i + "x" + j + ".txt", loops);
 
                     Console.WriteLine("Finished " + i + "x" + j + "!");
                 }
@@ -56,12 +56,12 @@ namespace RacetrackMetricAnalysis
             }
             string result = "Straight Aways: "+endStraights+"\n"+"Super Straight Aways: "+endSuperStraights+"\n"+"Turns: "+endTurns+"\n"
                 +"Consecutive Turns: "+endConsecutiveTurns+"\n"+"Longest Super Straight: "+longestSuperStraight+"\n"+"Longest Consecutive Turn: "+longestConsecutiveTurns;
-            System.IO.File.WriteAllText(@"C:\Users\Jake\Documents\RacetrackMetricAnalysis\RacetrackMetricAnalysis\racetrackmetricanalysis\OutputMetrics\Results.txt", result);
+            System.IO.File.WriteAllText(@"C:\Users\Chase Plante\Documents\GitHub\PCG-Racing\RacetrackMetricAnalysis\RacetrackMetricAnalysis\racetrackmetricanalysis\OutputMetrics\Results.txt", result);
         }
 
         static string CreateCommaSeparatedLoopWithMetricValues(string loop, RacetrackMetrics metrics)
         {
-            return loop + "," + metrics.NumberOfTurns + "," + metrics.NumberOfStraights+","+metrics.NumberOfSuperStraights;
+            return loop + "," + metrics.NumberOfTurns + "," + metrics.NumberOfStraights+","+metrics.NumberOfSuperStraights+","+metrics.NumberOfConsecutiveTurns+","+metrics.AverageSuperStraightLength + "," + metrics.AverageConsecutiveTurns;
         }
     }
 }
