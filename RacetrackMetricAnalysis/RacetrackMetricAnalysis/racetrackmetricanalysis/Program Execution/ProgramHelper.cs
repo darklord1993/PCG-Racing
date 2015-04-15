@@ -34,7 +34,7 @@ namespace RacetrackMetricAnalysis
             }
             string result = "Straight Aways: " + endStraights + "\n" + "Super Straight Aways: " + endSuperStraights + "\n" + "Turns: " + endTurns + "\n"
                 + "Consecutive Turns: " + endConsecutiveTurns + "\n" + "Longest Super Straight: " + longestSuperStraight + "\n" + "Longest Consecutive Turn: " + longestConsecutiveTurns;
-            System.IO.File.WriteAllText(@"C:\Users\Chase Plante\Documents\GitHub\PCG-Racing\RacetrackMetricAnalysis\RacetrackMetricAnalysis\racetrackmetricanalysis\OutputMetrics\Results.txt", result);
+            System.IO.File.WriteAllText(RacetrackMetricAnalysis.Properties.Settings.Default.FilePath + @"\PCG-Racing\RacetrackMetricAnalysis\RacetrackMetricAnalysis\racetrackmetricanalysis\OutputMetrics\Results.txt", result);
         }
 
         public static string CreateCommaSeparatedLoopWithMetricValues(string loop, RacetrackMetrics metrics)
