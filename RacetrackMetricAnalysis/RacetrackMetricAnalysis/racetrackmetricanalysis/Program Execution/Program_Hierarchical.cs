@@ -22,17 +22,18 @@ namespace RacetrackMetricAnalysis
 
         public void Execute(string[] args)
         {
+
             RacetrackAnalyzer analyzer = new RacetrackAnalyzer();
 
             for (int i = 0; i < hierarchicalTypes.Count; i++)
             {
                 Console.WriteLine("Starting " + hierarchicalTypes[i] + "...");
 
-                string[] loops = System.IO.File.ReadAllLines(@"C:\Users\Chase Plante\Documents\GitHub\PCG-Racing\HierarchicalTileWalkthroughs\" + hierarchicalTypes[i] + "_5x5.txt");
+                string[] loops = System.IO.File.ReadAllLines(RacetrackMetricAnalysis.Properties.Settings.Default.FilePath + @"\PCG-Racing\HierarchicalTileWalkthroughs\" + hierarchicalTypes[i] + "_5x5.txt");
 
                 ProgramHelper.ProcessMetrics(loops, analyzer);
 
-                System.IO.File.WriteAllLines(@"C:\Users\Chase Plante\Documents\GitHub\PCG-Racing\HierarchicalTileWalkthroughs\Metrics\" + hierarchicalTypes[i] + "_5x5.txt", loops);
+                System.IO.File.WriteAllLines(RacetrackMetricAnalysis.Properties.Settings.Default.FilePath + @"\PCG-Racing\HierarchicalTileWalkthroughs\Metrics\" + hierarchicalTypes[i] + "_5x5.txt", loops);
 
                 Console.WriteLine("Finished " + hierarchicalTypes[i] + "!");
             }

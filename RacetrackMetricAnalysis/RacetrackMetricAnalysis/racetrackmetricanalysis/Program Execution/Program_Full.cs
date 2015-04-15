@@ -20,11 +20,11 @@ namespace RacetrackMetricAnalysis
                 {
                     Console.WriteLine("Starting " + i + "x" + j + "...");
 
-                    string[] loops = System.IO.File.ReadAllLines(@"C:\Users\Chase Plante\Documents\GitHub\PCG-Racing\RacetrackMetricAnalysis\RacetrackMetricAnalysis\racetrackmetricanalysis\Loops\Loops_" + i + "x" + j + ".txt");
+                    string[] loops = System.IO.File.ReadAllLines(RacetrackMetricAnalysis.Properties.Settings.Default.FilePath + @"\PCG-Racing\RacetrackMetricAnalysis\RacetrackMetricAnalysis\racetrackmetricanalysis\Loops\Loops_" + i + "x" + j + ".txt");
 
                     ProgramHelper.ProcessMetrics(loops, analyzer);
 
-                    System.IO.File.WriteAllLines(@"C:\Users\Chase Plante\Documents\GitHub\PCG-Racing\RacetrackMetricAnalysis\RacetrackMetricAnalysis\racetrackmetricanalysis\LoopsWithMetrics\Loops_" + i + "x" + j + ".txt", loops);
+                    System.IO.File.WriteAllLines(RacetrackMetricAnalysis.Properties.Settings.Default.FilePath + @"\PCG-Racing\RacetrackMetricAnalysis\RacetrackMetricAnalysis\racetrackmetricanalysis\LoopsWithMetrics\Loops_" + i + "x" + j + ".txt", loops);
 
                     Console.WriteLine("Finished " + i + "x" + j + "!");
                 }
