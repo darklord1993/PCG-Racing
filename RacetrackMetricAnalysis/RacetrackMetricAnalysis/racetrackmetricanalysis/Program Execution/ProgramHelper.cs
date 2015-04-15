@@ -39,7 +39,7 @@ namespace RacetrackMetricAnalysis
 
         public static string CreateCommaSeparatedLoopWithMetricValues(string loop, RacetrackMetrics metrics)
         {
-            return loop + "," + metrics.FullLength + "," + metrics.NumberOfTurns + "," + metrics.NumberOfStraights + "," + metrics.NumberOfSuperStraights + "," + metrics.NumberOfConsecutiveTurns + "," + metrics.AverageSuperStraightLength + "," + metrics.AverageConsecutiveTurns;
+            return loop + "," + metrics.FullLength + "," + metrics.NumberOfTurns + "," + metrics.NumberOfStraights + "," + metrics.NumberOfSuperStraights + "," + metrics.NumberOfConsecutiveTurns + "," + metrics.AverageSuperStraightLength + "," + metrics.AverageConsecutiveTurns + "," + metrics.StraightsToTurnsRatio;
         }
     }
 }
