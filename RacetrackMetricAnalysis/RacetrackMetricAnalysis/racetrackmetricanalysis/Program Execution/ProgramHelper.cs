@@ -12,7 +12,8 @@ namespace RacetrackMetricAnalysis
         public static void ProcessMetrics(string[] loops, RacetrackAnalyzer analyzer)
         {
             RacetrackMetrics metrics;
-            int endStraights = 0, endSuperStraights = 0, endTurns = 0, endConsecutiveTurns = 0, longestSuperStraight = 0, longestConsecutiveTurns = 0;
+            int endStraights = 0, endSuperStraights = 0, endTurns = 0, endConsecutiveTurns = 0;
+            float longestSuperStraight = 0, longestConsecutiveTurns = 0;
 
             for (int i = 0; i < loops.Length; i++)
             {
@@ -21,13 +22,13 @@ namespace RacetrackMetricAnalysis
                 endSuperStraights += metrics.NumberOfSuperStraights;
                 endTurns += metrics.NumberOfTurns;
                 endConsecutiveTurns += metrics.NumberOfConsecutiveTurns;
-                if (metrics.NumberOfSuperStraights > longestSuperStraight)
+                if (metrics.AverageSuperStraightLength > longestSuperStraight)
                 {
-                    longestSuperStraight = metrics.NumberOfSuperStraights;
+                    longestSuperStraight = metrics.AverageSuperStraightLength;
                 }
-                if (metrics.NumberOfConsecutiveTurns > longestConsecutiveTurns)
+                if (metrics.AverageConsecutiveTurns > longestConsecutiveTurns)
                 {
-                    longestConsecutiveTurns = metrics.NumberOfConsecutiveTurns;
+                    longestConsecutiveTurns = metrics.AverageConsecutiveTurns;
                 }
 
                 loops[i] = CreateCommaSeparatedLoopWithMetricValues(loops[i], metrics);
@@ -39,7 +40,7 @@ namespace RacetrackMetricAnalysis
 
         public static string CreateCommaSeparatedLoopWithMetricValues(string loop, RacetrackMetrics metrics)
         {
-            return loop + "," + metrics.FullLength + "," + metrics.NumberOfTurns + "," + metrics.NumberOfStraights + "," + metrics.NumberOfSuperStraights + "," + metrics.NumberOfConsecutiveTurns + "," + metrics.AverageSuperStraightLength + "," + metrics.AverageConsecutiveTurns + "," + metrics.StraightsToTurnsRatio;
+            return loop + "," + metrics.FullLength + "," + metrics.NumberOfTurns + "," + metrics.NumberOfStraights + "," + metrics.NumberOfSuperStraights + "," + metrics.NumberOfConsecutiveTurns + "," + metrics.AverageSuperStraightLength + "," + metrics.AverageConsecutiveTurns + "," + metrics.StraightsRatio + "," + metrics.Grade;
         }
     }
 }

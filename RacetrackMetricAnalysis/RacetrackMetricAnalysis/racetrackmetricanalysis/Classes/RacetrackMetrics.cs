@@ -18,8 +18,10 @@ namespace RacetrackMetricAnalysis.Classes
         public float AverageSuperStraightLength { get { return _avgSuperStraightLength; } }
         private float _avgConsecutiveTurns;
         public float AverageConsecutiveTurns { get { return _avgConsecutiveTurns; } }
-        private float _straightsToTurnsRatio;
-        public float StraightsToTurnsRatio { get { return _straightsToTurnsRatio; } }
+        private float _straightsRatio;
+        public float StraightsRatio { get { return _straightsRatio; } }
+        private float _grade;
+        public float Grade { get { return _grade; } }
 
         public RacetrackMetrics(int numberOfTurns, int numberOfStraights, int numberOfSuperStraights, int numberOfConsecutiveTurns)
         {
@@ -36,8 +38,10 @@ namespace RacetrackMetricAnalysis.Classes
             if (NumberOfConsecutiveTurns == 0) _avgConsecutiveTurns = 0f;
             else _avgConsecutiveTurns = (float)numberOfTurns / (float)NumberOfConsecutiveTurns;
 
-            if (NumberOfTurns == 0) _straightsToTurnsRatio = 999;
-            else _straightsToTurnsRatio = (float)NumberOfStraights / (float)NumberOfTurns;
+            _straightsRatio = (float)NumberOfStraights / (float)_fullLength;
+
+            _grade = (float)(_straightsRatio / 2f + (_avgSuperStraightLength - 3.75) / 2.5f - (_avgConsecutiveTurns - 10.75) / 7.5f);
+            if (_fullLength > 20) _grade = -1;
         }
     }
 }

@@ -1,0 +1,6 @@
+Straight Aways: 0
+Super Straight Aways: 0
+Turns: 0
+Consecutive Turns: 0
+Longest Super Straight: 0
+Longest Consecutive Turn: 0
