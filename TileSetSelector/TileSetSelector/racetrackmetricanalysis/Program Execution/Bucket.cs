@@ -10,7 +10,7 @@ namespace TileSetSelector.Execution
         List<Bucket> buckets;
         int tilesPerBucket;
         int counter;
-        private const int max_attempts = 9000;
+        private const int max_attempts = 2000000;
 
         public BucketManager(int numBuckets, int tilesPerBucket)
         {
@@ -33,7 +33,8 @@ namespace TileSetSelector.Execution
         public void Reset()
         {
             foreach (var bucket in buckets)
-                bucket.metaTiles = new List<MetaTile>();
+                bucket.metaTiles = new List<string>();
+            counter = 0;
         }
 
         public void TryAddMetaTile(MetaTile tile)
@@ -42,9 +43,10 @@ namespace TileSetSelector.Execution
             {
                 if (buckets[i].max < tile.grade) continue;
                 if (buckets[i].min > tile.grade) break;
+                if (buckets[i].metaTiles.Contains(tile.path)) break;
                 if (buckets[i].metaTiles.Count >= tilesPerBucket) continue;
 
-                buckets[i].metaTiles.Add(tile);
+                buckets[i].metaTiles.Add(tile.path);
                 break;
             }
         }
@@ -57,7 +59,8 @@ namespace TileSetSelector.Execution
         public bool isComplete()
         {
             counter++;
-            if (counter > max_attempts) return true;
+            if (counter > max_attempts)
+                return true;
             else return !buckets.Any(b => b.metaTiles.Count < tilesPerBucket);
         }
     }
@@ -66,13 +69,13 @@ namespace TileSetSelector.Execution
     {
         public float min;
         public float max;
-        public List<MetaTile> metaTiles;
+        public List<string> metaTiles;
 
         public Bucket(float min, float max)
         {
             this.min = min;
             this.max = max;
-            metaTiles = new List<MetaTile>();
+            metaTiles = new List<string>();
         }
     }
 

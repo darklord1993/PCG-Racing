@@ -12,7 +12,7 @@ namespace TileSetSelector.Execution
 
         public static void ExtractSet()
         {
-            rand = new Random(10345);
+            rand = new Random(12475);
             HierarchicalTileSet set = new HierarchicalTileSet();
             BucketManager bucketManager = new BucketManager(4, 4);
             string[] turnLoops = System.IO.File.ReadAllLines(TileSetSelector.Properties.Settings.Default.FilePath + @"\PCG-Racing\HierarchicalTileWalkthroughs\Metrics\BottomLeft_5x5.txt");
@@ -49,7 +49,7 @@ namespace TileSetSelector.Execution
             var buckets = manager.getBuckets();
             var returnList = new List<string>();
             foreach(var bucket in buckets)
-                returnList.AddRange(bucket.metaTiles.Select(t => t.path));
+                returnList.AddRange(bucket.metaTiles.Select(t => t));
             return returnList;
         }
     }

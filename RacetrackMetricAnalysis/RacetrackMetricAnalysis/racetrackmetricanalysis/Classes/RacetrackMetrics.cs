@@ -40,7 +40,7 @@ namespace RacetrackMetricAnalysis.Classes
 
             _straightsRatio = (float)NumberOfStraights / (float)_fullLength;
 
-            _grade = (float)(_straightsRatio / 2f + (_avgSuperStraightLength - 3.75) / 2.5f - (_avgConsecutiveTurns - 10.75) / 7.5f);
+            _grade = (float)(_straightsRatio / 2f - (_avgSuperStraightLength - 20) / 31f - (_avgConsecutiveTurns) / 15f);
             if (_fullLength > 20) _grade = -1;
         }
     }
