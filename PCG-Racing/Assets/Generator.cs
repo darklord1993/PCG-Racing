@@ -9,6 +9,7 @@ namespace PCGRacing
     {
         public float width;
         public float height;
+        public bool isLoop = true;
 
         //Prefabs
         //public GameObject left;
@@ -67,32 +68,44 @@ namespace PCGRacing
                 }
             }
 
-            int j;
-            int s = trackCode.IndexOf('s');
-            if (!trackCode.Contains('s')) s = 0;
-            j = s;
-
-            while (j < trackCode.Length)
+            if (isLoop)
             {
-                var marker = track[j].Generate(width, height, markerPrefab);
-                marker.transform.parent = markersCollection.transform;
-                j++;
+                int j;
+                int s = trackCode.IndexOf('s');
+                if (!trackCode.Contains('s')) s = 0;
+                j = s;
+
+                while (j < trackCode.Length)
+                {
+                    var marker = track[j].Generate(width, height, markerPrefab);
+                    marker.transform.parent = markersCollection.transform;
+                    j++;
+                }
+
+                j = 0;
+
+                while (j < s)
+                {
+                    var marker = track[j].Generate(width, height, markerPrefab);
+                    marker.transform.parent = markersCollection.transform;
+                    j++;
+                }
+
+                var markerLast = track[s].Generate(width, height, markerPrefab);
+                markerLast.transform.parent = markersCollection.transform;
+                markerLast = track[s + 1].Generate(width, height, markerPrefab);
+                markerLast.transform.parent = markersCollection.transform;
             }
-
-            j = 0;
-
-            while (j < s)
+            else
             {
-                var marker = track[j].Generate(width, height, markerPrefab);
-                marker.transform.parent = markersCollection.transform;
-                j++;
+                int i = 0;
+                while (i < trackCode.Length)
+                {
+                    var marker = track[i].Generate(width, height, markerPrefab);
+                    marker.transform.parent = markersCollection.transform;
+                    i++;
+                }
             }
-
-            var markerLast = track[s].Generate(width, height, markerPrefab);
-            markerLast.transform.parent = markersCollection.transform;
-            markerLast = track[s + 1].Generate(width, height, markerPrefab);
-            markerLast.transform.parent = markersCollection.transform;
-
             road.SetActive(true);
             road.GetComponent<RoadObjectScript>().OOCCOODQQD(null, null, null);
         }
