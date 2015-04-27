@@ -21,9 +21,26 @@ namespace PCGRacing
             this.dir = dir;
         }
 
-        public GameObject Generate(float width, float height, GameObject marker)
+        public void Generate(float width, float height)
         {
-            return GameObject.Instantiate(marker, new Vector3(x * width, 0f, y * height), Quaternion.identity) as GameObject;
+            var tile = GameObject.Instantiate(prefab, new Vector3(x * width, 0f, y * height), Quaternion.identity) as GameObject;
+
+            if (dir == Direction.W)
+            {
+                tile.transform.LookAt(new Vector3(x * width + 1, 0f, y * height));
+            }
+            else if (dir == Direction.S)
+            {
+                tile.transform.LookAt(new Vector3(x * width, 0f, y * height + 1));
+            }
+            else if (dir == Direction.N)
+            {
+                tile.transform.LookAt(new Vector3(x * width, 0f, y * height - 1));
+            }
+            else if (dir == Direction.E)
+            {
+                tile.transform.LookAt(new Vector3(x * width - 1, 0f, y * height));
+            }
         }
     }
 
