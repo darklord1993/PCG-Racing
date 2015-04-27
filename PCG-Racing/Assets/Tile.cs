@@ -21,6 +21,15 @@ namespace PCGRacing
             this.dir = dir;
         }
 
+        public Tile(int x, int y, Direction dir, TileType type, GameObject prefab)
+        {
+            this.x = x;
+            this.y = y;
+            this.dir = dir;
+            this.type = type;
+            this.prefab = prefab;
+        }
+
         public void Generate(float width, float height)
         {
             var tile = GameObject.Instantiate(prefab, new Vector3(x * width, 0f, y * height), Quaternion.identity) as GameObject;
@@ -48,7 +57,8 @@ namespace PCGRacing
     {
         Left,
         Right,
-        Straight
+        Straight,
+        Terrain
     }
 
     public enum Direction
