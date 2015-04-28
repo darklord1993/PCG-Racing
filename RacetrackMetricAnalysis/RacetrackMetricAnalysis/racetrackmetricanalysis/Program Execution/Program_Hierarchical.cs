@@ -31,7 +31,7 @@ namespace RacetrackMetricAnalysis
 
                 string[] loops = System.IO.File.ReadAllLines(RacetrackMetricAnalysis.Properties.Settings.Default.FilePath + @"\PCG-Racing\HierarchicalTileWalkthroughs\" + hierarchicalTypes[i] + "_5x5.txt");
 
-                ProgramHelper.ProcessMetrics(loops, analyzer);
+                ProgramHelper.ProcessMetrics(loops, analyzer, OutputMode.Grade);
 
                 System.IO.File.WriteAllLines(RacetrackMetricAnalysis.Properties.Settings.Default.FilePath + @"\PCG-Racing\HierarchicalTileWalkthroughs\Metrics\" + hierarchicalTypes[i] + "_5x5.txt", loops);
 

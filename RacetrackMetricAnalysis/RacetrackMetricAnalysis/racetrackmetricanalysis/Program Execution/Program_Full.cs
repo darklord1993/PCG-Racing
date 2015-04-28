@@ -22,7 +22,7 @@ namespace RacetrackMetricAnalysis
 
                     string[] loops = System.IO.File.ReadAllLines(RacetrackMetricAnalysis.Properties.Settings.Default.FilePath + @"\PCG-Racing\RacetrackMetricAnalysis\RacetrackMetricAnalysis\racetrackmetricanalysis\Loops\Loops_" + i + "x" + j + ".txt");
 
-                    ProgramHelper.ProcessMetrics(loops, analyzer);
+                    ProgramHelper.ProcessMetrics(loops, analyzer, OutputMode.Grade);
 
                     System.IO.File.WriteAllLines(RacetrackMetricAnalysis.Properties.Settings.Default.FilePath + @"\PCG-Racing\RacetrackMetricAnalysis\RacetrackMetricAnalysis\racetrackmetricanalysis\LoopsWithMetrics\Loops_" + i + "x" + j + ".txt", loops);
 
