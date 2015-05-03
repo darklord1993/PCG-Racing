@@ -56,8 +56,10 @@
      <Compile Include="Assets\Packages\EasyRoads3D Free\scripts\SideObjectInit.cs" />
      <Compile Include="Assets\Packages\EasyRoads3D Free\scripts\SurfaceScript.cs" />
      <Compile Include="Assets\Packages\EasyRoads3D Free\scripts\sideObjectScript.cs" />
+     <Compile Include="Assets\Sorter.cs" />
      <Compile Include="Assets\Statistics.cs" />
      <Compile Include="Assets\Tile.cs" />
+     <Compile Include="Assets\Timer.cs" />
      <None Include="Assets\Outputs\TracksWithErrors.txt" />
      <None Include="Assets\Packages\EasyRoads3D Free\Shaders\EasyRoads3D-Normal-BumpSpec.shader" />
      <None Include="Assets\Packages\EasyRoads3D Free\Shaders\EasyRoads3D-Surface.shader" />
