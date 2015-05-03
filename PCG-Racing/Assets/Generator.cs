@@ -18,6 +18,7 @@ namespace PCGRacing
         public GameObject left;
         public GameObject straight;
         public GameObject right;
+        public GameObject checkpoint;
         public List<GameObject> terrainPrefabs;
 
         public string trackCode;
@@ -29,6 +30,8 @@ namespace PCGRacing
         // Use this for initialization
         void Start()
         {
+            Tile.checkpointPrefab = checkpoint;
+
             if (gridWidth % 2 == 1) widthDif = (gridWidth - 1) / 2;
             else widthDif = gridWidth / 2;
 
@@ -46,6 +49,8 @@ namespace PCGRacing
                     int terrainIndex = UnityEngine.Random.Range(0, terrainPrefabs.Count);
                     track.Add(new Tile(i, j, Direction.N, TileType.Terrain, terrainPrefabs[terrainIndex]));
                 }
+
+            int prevIndex = 0;
 
             for (int i = 0; i < trackCode.Length; i++)
             {
@@ -81,6 +86,9 @@ namespace PCGRacing
                     else if (nextDir == Direction.E) { nextY += 1; nextDir = Direction.N; }
                     else if (nextDir == Direction.W) { nextY -= 1; nextDir = Direction.S; }
                 }
+                else track[prevIndex].checkpoint = true; //c
+
+                prevIndex = index;
             }
 
             track.ForEach(t => t.Generate(tileWidth, tileHeight));

@@ -8,11 +8,13 @@ namespace PCGRacing
 {
     public class Tile
     {
+        public static GameObject checkpointPrefab;
         public int x;
         public int y;
         public TileType type;
         public Direction dir;
         public GameObject prefab;
+        public bool checkpoint;
 
         public Tile(int x, int y, Direction dir)
         {
@@ -49,6 +51,12 @@ namespace PCGRacing
             else if (dir == Direction.E)
             {
                 tile.transform.LookAt(new Vector3(x * width - 1, 0f, y * height));
+            }
+
+            if (checkpoint)
+            {
+                var cPoint = GameObject.Instantiate(checkpointPrefab, new Vector3(x * width, 124f, y * height), Quaternion.identity) as GameObject;
+                cPoint.transform.parent = tile.transform;
             }
         }
     }

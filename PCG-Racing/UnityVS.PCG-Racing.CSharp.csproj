@@ -61,6 +61,8 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Assets\Generator.cs" />
+    <Compile Include="Assets\LoopGenerator.cs" />
+    <Compile Include="Assets\MetaTilePreference.cs" />
     <Compile Include="Assets\Packages\EasyRoads3D Free\scripts\EasyRoads3DTerrainID.cs" />
     <Compile Include="Assets\Packages\EasyRoads3D Free\scripts\MarkerScript.cs" />
     <Compile Include="Assets\Packages\EasyRoads3D Free\scripts\RoadObjectScript.cs" />
@@ -68,6 +70,26 @@
     <Compile Include="Assets\Packages\EasyRoads3D Free\scripts\SurfaceScript.cs" />
     <Compile Include="Assets\Packages\EasyRoads3D Free\scripts\sideObjectScript.cs" />
     <Compile Include="Assets\Tile.cs" />
+    <None Include="Assets\Inputs\LoopsSortedByLength\LoopsOfLength_10.txt" />
+    <None Include="Assets\Inputs\LoopsSortedByLength\LoopsOfLength_12.txt" />
+    <None Include="Assets\Inputs\LoopsSortedByLength\LoopsOfLength_14.txt" />
+    <None Include="Assets\Inputs\LoopsSortedByLength\LoopsOfLength_16.txt" />
+    <None Include="Assets\Inputs\LoopsSortedByLength\LoopsOfLength_18.txt" />
+    <None Include="Assets\Inputs\LoopsSortedByLength\LoopsOfLength_20.txt" />
+    <None Include="Assets\Inputs\LoopsSortedByLength\LoopsOfLength_22.txt" />
+    <None Include="Assets\Inputs\LoopsSortedByLength\LoopsOfLength_24.txt" />
+    <None Include="Assets\Inputs\LoopsSortedByLength\LoopsOfLength_26.txt" />
+    <None Include="Assets\Inputs\LoopsSortedByLength\LoopsOfLength_28.txt" />
+    <None Include="Assets\Inputs\LoopsSortedByLength\LoopsOfLength_30.txt" />
+    <None Include="Assets\Inputs\LoopsSortedByLength\LoopsOfLength_32.txt" />
+    <None Include="Assets\Inputs\LoopsSortedByLength\LoopsOfLength_34.txt" />
+    <None Include="Assets\Inputs\LoopsSortedByLength\LoopsOfLength_36.txt" />
+    <None Include="Assets\Inputs\LoopsSortedByLength\LoopsOfLength_4.txt" />
+    <None Include="Assets\Inputs\LoopsSortedByLength\LoopsOfLength_6.txt" />
+    <None Include="Assets\Inputs\LoopsSortedByLength\LoopsOfLength_8.txt" />
+    <None Include="Assets\Inputs\Metatiles\Straights.txt" />
+    <None Include="Assets\Inputs\Metatiles\Turns.txt" />
+    <None Include="Assets\Outputs\TracksWithErrors.txt" />
     <None Include="Assets\Packages\EasyRoads3D Free\_readme.txt" />
     <None Include="Assets\Packages\EasyRoads3D Free\Release Notes.txt" />
     <None Include="Assets\Packages\EasyRoads3D Free\Shaders\EasyRoads3D Marker.shader" />
