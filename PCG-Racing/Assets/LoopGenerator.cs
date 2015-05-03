@@ -154,7 +154,7 @@ public class LoopGenerator : MonoBehaviour {
 			}
 		}
 
-		System.IO.File.WriteAllLines ("Assets/Outputs/TracksWithErrors.txt", tracksWithErrors.ToArray());
+		//System.IO.File.WriteAllLines ("Assets/Outputs/TracksWithErrors.txt", tracksWithErrors.ToArray());
 
 		Debug.Log ("Lowest Error: " + lowestError);
 		return bestTrack;
