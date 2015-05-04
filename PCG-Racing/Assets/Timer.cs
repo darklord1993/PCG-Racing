@@ -20,7 +20,7 @@ public class Timer : MonoBehaviour {
 	{
 		checkpoints = new List<GameObject>();
 		racing = true;
-		timer = 1500; 
+		timer = 1800; 
 		timeText = GetComponent<Text> ();
 	}
 	

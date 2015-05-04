@@ -32,17 +32,17 @@ public class StartandFinish : MonoBehaviour {
 	{
 		Generator genScript = generatorObj.GetComponent<Generator> ();
 		totalCheckPoints = genScript.totalCheckpoints;
-		checkPointObjects = GameObject.FindGameObjectsWithTag ("EditorOnly");
-		foreach (GameObject c in checkPointObjects) 
-		{
-			CheckPoint checkScript = c.GetComponent<CheckPoint>();
-			if(checkScript.activated == true)
-				checkPointsLit++;
-		}
+		checkPointObjects = GameObject.FindGameObjectsWithTag ("Checkpoint");
+		//foreach (GameObject c in checkPointObjects) 
+		//{
+			//CheckPoint checkScript = c.GetComponent<CheckPoint>();
+			//if(checkScript.activated == true)
+			//	checkPointsLit++;
+		//}
 		if (totalCheckPoints == checkPointsLit)
 				isActive = true;
-			else
-				checkPointsLit = 0;
+			//else
+				//checkPointsLit = 0;
 
 	}
 
@@ -50,7 +50,10 @@ public class StartandFinish : MonoBehaviour {
 	{
 		if (isActive) 
 		{
-			//win condition
+				Timer.racing = false;
+				checkpointSound.loop = true;
+				checkpointSound.Play();
+				isActive = false;
 		}
 	}
 	}
