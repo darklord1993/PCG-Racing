@@ -9,13 +9,13 @@ public class Sorter : MonoBehaviour {
 
 	void Start ()
 	{
-		metatiles = System.IO.File.ReadAllLines ("Assets/Inputs/Metatiles/Turns.txt");
-		//metatiles = System.IO.File.ReadAllLines ("Assets/Inputs/Metatiles/Straights.txt");
+		//metatiles = System.IO.File.ReadAllLines ("Assets/Inputs/Metatiles/Turns.txt");
+		metatiles = System.IO.File.ReadAllLines ("Assets/Inputs/Metatiles/Straights.txt");
 
-		Sort ();
+		System.IO.File.WriteAllLines ("Assets/Inputs/Metatiles/SortedStraights.txt", SortTiles ().ToArray());
 	}
 	
-	private void Sort()
+	private List<string> SortTiles()
 	{
 		List<string> unsortedTiles = new List<string> (metatiles);
 		List<string> sortedTiles = new List<string> ();
@@ -42,6 +42,21 @@ public class Sorter : MonoBehaviour {
 			sortedTiles.Add(lowestSpeedLine);
 		}
 
-		//System.IO.File.WriteAllLines ("Assets/Outputs/Test.txt", sortedTiles.ToArray ());
+		RemoveBadTiles (ref sortedTiles);
+
+		return sortedTiles;
+	}
+
+	private void RemoveBadTiles(ref List<string> sortedTiles)
+	{
+		while (sortedTiles.Count > 0)
+		{
+			string[] trackInfo = sortedTiles[0].Split(',');
+
+			if (float.Parse (trackInfo[1]) == -1)
+				sortedTiles.RemoveAt(0);
+			else
+				break;
+		}
 	}
 }

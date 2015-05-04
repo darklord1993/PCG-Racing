@@ -17,8 +17,8 @@ public class LoopGenerator : MonoBehaviour {
 		// Make preferredTrackLength even if the user selected an odd number
 		preferredTrackLength = ((preferredTrackLength % 2) == 0) ? preferredTrackLength : preferredTrackLength - 1;
 
-		turns = System.IO.File.ReadAllLines ("Assets/Inputs/Metatiles/Turns.txt");
-		straights = System.IO.File.ReadAllLines ("Assets/Inputs/Metatiles/Straights.txt");
+		turns = System.IO.File.ReadAllLines ("Assets/Inputs/Metatiles/SortedTurns.txt");
+		straights = System.IO.File.ReadAllLines ("Assets/Inputs/Metatiles/SortedStraights.txt");
 		possibleTracks = System.IO.File.ReadAllLines("Assets/Inputs/LoopsSortedByLength/LoopsOfLength_" + preferredTrackLength + ".txt");
 
 		AdjustPreferences ();
@@ -96,20 +96,23 @@ public class LoopGenerator : MonoBehaviour {
 				{
 					if (loop[i] != 's')
 					{
-						metatiles = new List<string>(turns);
+						//metatiles = new List<string>(turns);
+						metatiles = BuildListOfTiles(turns, speedGoal, differential);
 					}
 					else
 					{
-						metatiles = new List<string>(straights);
+						//metatiles = new List<string>(straights);
+						metatiles = BuildListOfTiles(straights, speedGoal, differential);
 					}
 
 					while (metatiles.Count > 0)
 					{
 						string tileWithMetrics = metatiles[Random.Range(0, metatiles.Count)];
 						string[] tileInfo = tileWithMetrics.Split(',');
+						float speedValue = float.Parse(tileInfo[1]), agilityValue = float.Parse(tileInfo[2]);
 
-						if (((float.Parse(tileInfo[1]) < (speedGoal + differential)) && (float.Parse(tileInfo[1]) > (speedGoal - differential)))
-						    && ((float.Parse(tileInfo[2]) < (agilityGoal + differential)) && (float.Parse(tileInfo[2]) > (agilityGoal - differential))))
+						if ((agilityValue < (agilityGoal + differential)) && (agilityValue > (agilityGoal - differential)))// &&
+							//(speedValue < (speedGoal + differential)) && (speedValue > (speedGoal - differential)))
 						{
 							metatile = tileInfo[0];
 
@@ -121,8 +124,8 @@ public class LoopGenerator : MonoBehaviour {
 							track.Append(metatile);
 							track.Append('c');
 
-							error += Mathf.Abs(speedGoal - float.Parse(tileInfo[1]));
-							error += Mathf.Abs(agilityGoal - float.Parse(tileInfo[2]));
+							error += Mathf.Abs(speedGoal - speedValue);
+							error += Mathf.Abs(agilityGoal - agilityValue);
 
 							foundMetatile = true;
 
@@ -154,10 +157,29 @@ public class LoopGenerator : MonoBehaviour {
 			}
 		}
 
-		//System.IO.File.WriteAllLines ("Assets/Outputs/TracksWithErrors.txt", tracksWithErrors.ToArray());
+		System.IO.File.WriteAllLines ("Assets/Outputs/TracksWithErrorsTest.txt", tracksWithErrors.ToArray());
 
 		Debug.Log ("Lowest Error: " + lowestError);
 		return bestTrack;
+	}
+
+	private List<string> BuildListOfTiles(string[] allTiles, float speedGoal, float differential)
+	{
+		List<string> tileList = new List<string> ();
+
+		for (int i = 0; i < allTiles.Length; i++)
+		{
+			string tileWithMetrics = allTiles[i];
+			string[] tileInfo = tileWithMetrics.Split(',');
+			float speedValue = float.Parse(tileInfo[1]);
+
+			if ((speedValue < (speedGoal + differential)) && (speedValue > (speedGoal - differential)))
+				tileList.Add(tileWithMetrics);
+			else if (speedValue > (speedGoal + differential))
+				break;
+		}
+
+		return tileList;
 	}
 
 	private string ReverseTurn(string tile)
