@@ -108,13 +108,13 @@
  <HintPath>C:/Program Files/Unity/Editor/Data/UnityExtensions/Unity/GUISystem/Editor/UnityEditor.UI.dll</HintPath>
  </Reference>
  <Reference Include="EasyRoads3DEditor">
- <HintPath>C:/Users/Mills/Desktop/PCGRacing/PCG-Racing/PCG-Racing/Assets/Packages/EasyRoads3D Free/Editor/EasyRoads3DEditor.dll</HintPath>
+ <HintPath>C:/Users/Jake/Documents/PCG-Racing/PCG-Racing/Assets/Packages/EasyRoads3D Free/Editor/EasyRoads3DEditor.dll</HintPath>
  </Reference>
  <Reference Include="EasyRoads3D">
- <HintPath>C:/Users/Mills/Desktop/PCGRacing/PCG-Racing/PCG-Racing/Assets/Packages/EasyRoads3D Free/lib/EasyRoads3D.dll</HintPath>
+ <HintPath>C:/Users/Jake/Documents/PCG-Racing/PCG-Racing/Assets/Packages/EasyRoads3D Free/lib/EasyRoads3D.dll</HintPath>
  </Reference>
  <Reference Include="UnityVS.VersionSpecific">
- <HintPath>C:/Users/Mills/Desktop/PCGRacing/PCG-Racing/PCG-Racing/Assets/UnityVS/Editor/UnityVS.VersionSpecific.dll</HintPath>
+ <HintPath>C:/Users/Jake/Documents/PCG-Racing/PCG-Racing/Assets/UnityVS/Editor/UnityVS.VersionSpecific.dll</HintPath>
  </Reference>
  <Reference Include="UnityEditor.Graphs">
  <HintPath>C:/Program Files/Unity/Editor/Data/Managed/UnityEditor.Graphs.dll</HintPath>
@@ -155,6 +155,8 @@
       <Project>{3A7EBCE5-7018-ACCB-0736-FBA9B39695E1}</Project>      <Name>Assembly-CSharp-firstpass</Name>    </ProjectReference>
     <ProjectReference Include="Assembly-CSharp.csproj">
       <Project>{9A6E40B6-A3A9-8700-979D-E0D5935A3BE5}</Project>      <Name>Assembly-CSharp</Name>    </ProjectReference>
+    <ProjectReference Include="Assembly-UnityScript.unityproj">
+      <Project>{31D80D33-30FF-A5C7-F320-527CAC9B55E3}</Project>      <Name>Assembly-UnityScript</Name>    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

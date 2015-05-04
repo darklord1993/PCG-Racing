@@ -158,7 +158,7 @@
  <HintPath>C:/Program Files/Unity/Editor/Data/UnityExtensions/Unity/GUISystem/UnityEngine.UI.dll</HintPath>
  </Reference>
  <Reference Include="EasyRoads3D">
- <HintPath>C:/Users/Mills/Desktop/PCGRacing/PCG-Racing/PCG-Racing/Assets/Packages/EasyRoads3D Free/lib/EasyRoads3D.dll</HintPath>
+ <HintPath>C:/Users/Jake/Documents/PCG-Racing/PCG-Racing/Assets/Packages/EasyRoads3D Free/lib/EasyRoads3D.dll</HintPath>
  </Reference>
  <Reference Include="UnityEditor.iOS.Extensions.Xcode">
  <HintPath>C:/Program Files/Unity/Editor/Data/PlaybackEngines/iossupport/UnityEditor.iOS.Extensions.Xcode.dll</HintPath>
