@@ -9,6 +9,7 @@ public class CheckPoint : MonoBehaviour {
 	public int timer;
 	public Timer timerObj;
 	public GameObject textObj;
+	public bool activated;
 
 
 	// Use this for initialization
@@ -17,6 +18,7 @@ public class CheckPoint : MonoBehaviour {
 		timer = 0;
 		textObj = GameObject.FindGameObjectWithTag ("GameController");
 		timerObj = textObj.GetComponent<Timer> ();
+		activated = false;
 	}
 	
 	// Update is called once per frame
@@ -38,6 +40,7 @@ public class CheckPoint : MonoBehaviour {
 			checkpointSound.Play ();
 			isActive = false;
 			timerObj.addTime(1000);
+			activated = true;
 		}
 	}
 }

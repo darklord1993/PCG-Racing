@@ -10,6 +10,7 @@ namespace PCGRacing
         public int gridHeight;
         public float tileWidth;
         public float tileHeight;
+		public int totalCheckpoints;
 
         private int heightDif;
         private int widthDif;
@@ -26,6 +27,8 @@ namespace PCGRacing
         private Direction nextDir;
         private int nextX;
         private int nextY;
+
+		public Vector3[] wayPoints;
 
         // Use this for initialization
         void Start()
@@ -86,7 +89,10 @@ namespace PCGRacing
                     else if (nextDir == Direction.E) { nextY += 1; nextDir = Direction.N; }
                     else if (nextDir == Direction.W) { nextY -= 1; nextDir = Direction.S; }
                 }
-                else track[prevIndex].checkpoint = true; //c
+                else {
+					track[prevIndex].checkpoint = true; //c
+					totalCheckpoints++;
+				}
 
                 prevIndex = index;
             }
