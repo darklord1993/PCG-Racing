@@ -10,7 +10,8 @@ public class CheckPoint : MonoBehaviour {
 	public Timer timerObj;
 	public GameObject textObj;
 	public bool activated;
-
+	private GameObject checkpoints;
+	private MeshRenderer mesh;
 
 	// Use this for initialization
 	void Start () 
@@ -39,8 +40,15 @@ public class CheckPoint : MonoBehaviour {
 		{
 			checkpointSound.Play ();
 			isActive = false;
+			this.enabled = false;
+			mesh = this.GetComponent<MeshRenderer>();
+			mesh.enabled = false;
 			timerObj.addTime(1000);
 			activated = true;
+		}
+		if (this.gameObject.name == "StartandFinish") 
+		{
+			Timer.racing = false;
 		}
 	}
 }

@@ -56,10 +56,14 @@
      <Compile Include="Assets\Packages\EasyRoads3D Free\scripts\SideObjectInit.cs" />
      <Compile Include="Assets\Packages\EasyRoads3D Free\scripts\SurfaceScript.cs" />
      <Compile Include="Assets\Packages\EasyRoads3D Free\scripts\sideObjectScript.cs" />
+     <Compile Include="Assets\Reload.cs" />
      <Compile Include="Assets\Sorter.cs" />
+     <Compile Include="Assets\StartandFinish.cs" />
      <Compile Include="Assets\Statistics.cs" />
      <Compile Include="Assets\Tile.cs" />
+     <Compile Include="Assets\TimeControl.cs" />
      <Compile Include="Assets\Timer.cs" />
+     <Compile Include="Assets\WaypointFinder.cs" />
      <None Include="Assets\Outputs\TracksWithErrors.txt" />
      <None Include="Assets\Packages\EasyRoads3D Free\Shaders\EasyRoads3D-Normal-BumpSpec.shader" />
      <None Include="Assets\Packages\EasyRoads3D Free\Shaders\EasyRoads3D-Surface.shader" />
@@ -114,7 +118,7 @@
  <HintPath>C:/Program Files/Unity/Editor/Data/UnityExtensions/Unity/GUISystem/UnityEngine.UI.dll</HintPath>
  </Reference>
  <Reference Include="EasyRoads3D">
- <HintPath>C:/Users/Mills/Desktop/NewRacing/PCG-Racing/PCG-Racing/Assets/Packages/EasyRoads3D Free/lib/EasyRoads3D.dll</HintPath>
+ <HintPath>C:/Users/Jake/Documents/PCG-Racing/PCG-Racing/Assets/Packages/EasyRoads3D Free/lib/EasyRoads3D.dll</HintPath>
  </Reference>
  <Reference Include="UnityEditor.iOS.Extensions.Xcode">
  <HintPath>C:/Program Files/Unity/Editor/Data/PlaybackEngines/iossupport/UnityEditor.iOS.Extensions.Xcode.dll</HintPath>
