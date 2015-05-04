@@ -36,6 +36,22 @@ namespace PCGRacing
         {
             var tile = GameObject.Instantiate(prefab, new Vector3(x * width, 0f, y * height), Quaternion.identity) as GameObject;
 
+            if (checkpoint)
+            {
+                GameObject cPoint = null;
+                if (type == TileType.Left)
+                {
+                    cPoint = GameObject.Instantiate(checkpointPrefab, new Vector3(x * width + 3, 124f, y * height - 3), Quaternion.identity) as GameObject;
+                }
+                else if (type == TileType.Right)
+                {
+                    cPoint = GameObject.Instantiate(checkpointPrefab, new Vector3(x * width - 3, 124f, y * height + 3), Quaternion.identity) as GameObject;
+                }
+                else
+                    cPoint = GameObject.Instantiate(checkpointPrefab, new Vector3(x * width, 124f, y * height), Quaternion.identity) as GameObject;
+                cPoint.transform.parent = tile.transform;
+            }
+
             if (dir == Direction.W)
             {
                 tile.transform.LookAt(new Vector3(x * width + 1, 0f, y * height));
@@ -51,12 +67,6 @@ namespace PCGRacing
             else if (dir == Direction.E)
             {
                 tile.transform.LookAt(new Vector3(x * width - 1, 0f, y * height));
-            }
-
-            if (checkpoint)
-            {
-                var cPoint = GameObject.Instantiate(checkpointPrefab, new Vector3(x * width, 124f, y * height), Quaternion.identity) as GameObject;
-                cPoint.transform.parent = tile.transform;
             }
         }
     }
