@@ -127,8 +127,10 @@
      <None Include="Assets\Standard Assets\Vehicles\Aircraft\AircraftGuidelines.txt" />
      <None Include="Assets\Packages\EasyRoads3D Free\Shaders\EasyRoads3D Marker.shader" />
      <None Include="Assets\Packages\EasyRoads3D Free\Shaders\EasyRoads3D-Surface_Alpha.shader" />
+     <None Include="Assets\Inputs\Metatiles\SortedTurns.txt" />
      <None Include="Assets\Standard Assets\Vehicles\Car\Shaders\ReflectiveDiffuseSpecTransp.shader" />
      <None Include="Assets\Inputs\Metatiles\Turns.txt" />
+     <None Include="Assets\Inputs\Metatiles\SortedStraights.txt" />
      <None Include="Assets\Standard Assets\Vehicles\Car\Shaders\ReflectiveDiffuseSpec.shader" />
      <None Include="Assets\Standard Assets\Environment\Water (Basic)\Shaders\FXWaterBasic.shader" />
      <None Include="Assets\Inputs\LoopsSortedByLength\LoopsOfLength_32.txt" />
@@ -143,6 +145,7 @@
      <None Include="Assets\Outputs\Statistics.txt" />
      <None Include="Assets\Standard Assets\Vehicles\Car\CarGuidelines.txt" />
      <None Include="Assets\Packages\EasyRoads3D Free\Shaders\Surface.shader" />
+     <None Include="Assets\Outputs\TracksWithErrorsTest.txt" />
      <None Include="Assets\Inputs\Metatiles\Straights.txt" />
      <None Include="Assets\Inputs\LoopsSortedByLength\LoopsOfLength_14.txt" />
      <None Include="Assets\Inputs\LoopsSortedByLength\LoopsOfLength_24.txt" />
@@ -158,7 +161,7 @@
  <HintPath>C:/Program Files/Unity/Editor/Data/UnityExtensions/Unity/GUISystem/UnityEngine.UI.dll</HintPath>
  </Reference>
  <Reference Include="EasyRoads3D">
- <HintPath>C:/Users/Jake/Documents/PCG-Racing/PCG-Racing/Assets/Packages/EasyRoads3D Free/lib/EasyRoads3D.dll</HintPath>
+ <HintPath>C:/Users/Mills/Desktop/NewRacing/PCG-Racing/PCG-Racing/Assets/Packages/EasyRoads3D Free/lib/EasyRoads3D.dll</HintPath>
  </Reference>
  <Reference Include="UnityEditor.iOS.Extensions.Xcode">
  <HintPath>C:/Program Files/Unity/Editor/Data/PlaybackEngines/iossupport/UnityEditor.iOS.Extensions.Xcode.dll</HintPath>
