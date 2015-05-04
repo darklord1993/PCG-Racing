@@ -96,13 +96,13 @@ public class LoopGenerator : MonoBehaviour {
 				{
 					if (loop[i] != 's')
 					{
-						metatiles = new List<string>(turns);
-						//metatiles = BuildListOfTiles(turns, speedGoal, differential);
+						//metatiles = new List<string>(turns);
+						metatiles = BuildListOfTiles(turns, speedGoal, differential);
 					}
 					else
 					{
-						metatiles = new List<string>(straights);
-						//metatiles = BuildListOfTiles(straights, speedGoal, differential);
+						//metatiles = new List<string>(straights);
+						metatiles = BuildListOfTiles(straights, speedGoal, differential);
 					}
 
 					while (metatiles.Count > 0)
@@ -111,8 +111,8 @@ public class LoopGenerator : MonoBehaviour {
 						string[] tileInfo = tileWithMetrics.Split(',');
 						float speedValue = float.Parse(tileInfo[1]), agilityValue = float.Parse(tileInfo[2]);
 
-						if ((agilityValue < (agilityGoal + differential)) && (agilityValue > (agilityGoal - differential)) &&
-							(speedValue < (speedGoal + differential)) && (speedValue > (speedGoal - differential)))
+						if ((agilityValue < (agilityGoal + differential)) && (agilityValue > (agilityGoal - differential)))// &&
+							//(speedValue < (speedGoal + differential)) && (speedValue > (speedGoal - differential)))
 						{
 							metatile = tileInfo[0];
 
